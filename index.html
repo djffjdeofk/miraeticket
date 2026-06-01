@@ -296,6 +296,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
+  @media (min-width: 901px) {
+    .hero-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
   .stat-card {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.12);
@@ -913,20 +918,25 @@
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card featured">
-        <span class="stat-icon">🏆</span>
-        <div class="stat-num">98.7<span>%</span></div>
-        <div class="stat-label">고객 만족도 · 재거래율</div>
-      </div>
       <div class="stat-card">
         <span class="stat-icon">⚡</span>
         <div class="stat-num">5<span>분</span></div>
-        <div class="stat-label">평균 입금 시간</div>
+        <div class="stat-label">빠른 입금</div>
       </div>
       <div class="stat-card">
         <span class="stat-icon">🔒</span>
         <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">안전 거래 보장</div>
+        <div class="stat-label">안전 거래</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">📞</span>
+        <div class="stat-num">24<span>시간</span></div>
+        <div class="stat-label">365일 연중무휴</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">💰</span>
+        <div class="stat-num">최고<span>가</span></div>
+        <div class="stat-label">최고가 매입</div>
       </div>
     </div>
   </div>
