@@ -90,7 +90,7 @@ body{font-family:'Pretendard','Noto Sans KR',sans-serif;color:var(--g800);backgr
 /* ━━━━ HEADER ━━━━ */
 header{background:var(--white);border-bottom:1px solid var(--g200);position:sticky;top:0;z-index:100;box-shadow:var(--sh1);}
 .hd{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;position:relative;}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo{display:flex;align-items:center;text-decoration:none;}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--blue2),var(--navy));border-radius:9px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800;}
 .logo-name{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.5px;}
 .logo-name b{color:var(--blue2);}
@@ -382,8 +382,15 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
 <header>
   <div class="hd">
     <a href="#" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-name">미래<b>티켓</b></span>
+      <svg width="200" height="48" viewBox="0 0 200 48" style="display:block;">
+        <rect x="1" y="4" width="38" height="40" rx="6" fill="none" stroke="#E8692A" stroke-width="2"/>
+        <circle cx="1"  cy="24" r="4" fill="#E8692A"/>
+        <circle cx="39" cy="24" r="4" fill="#E8692A"/>
+        <line x1="27" y1="4" x2="27" y2="44" stroke="#E8692A" stroke-width="1.2" stroke-dasharray="3 2.5" opacity=".6"/>
+        <text x="14" y="28" text-anchor="middle" font-family="Noto Sans KR" font-weight="900" font-size="13" fill="#E8692A">M</text>
+        <text x="52" y="26" font-family="Noto Sans KR" font-weight="800" font-size="18" fill="#1B2A3E">미래티켓</text>
+        <text x="53" y="40" font-family="Noto Sans KR" font-weight="400" font-size="10" fill="#E8692A" letter-spacing="2">MIRAETICKET</text>
+      </svg>
     </a>
     <nav>
       <a href="#trust">서비스 안내</a>
@@ -674,7 +681,17 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
 <footer>
   <div class="footer-in">
     <div>
-      <div class="fl-logo"><div class="fl-mark">M</div><span class="fl-name">미래티켓</span></div>
+      <div class="fl-logo">
+        <svg width="160" height="38" viewBox="0 0 160 38">
+          <rect x="1" y="2" width="30" height="34" rx="5" fill="none" stroke="#E8692A" stroke-width="1.8"/>
+          <circle cx="1"  cy="19" r="3.5" fill="#E8692A"/>
+          <circle cx="31" cy="19" r="3.5" fill="#E8692A"/>
+          <line x1="21" y1="2" x2="21" y2="36" stroke="#E8692A" stroke-width="1.1" stroke-dasharray="3 2" opacity=".6"/>
+          <text x="11" y="23" text-anchor="middle" font-family="Noto Sans KR" font-weight="900" font-size="11" fill="#E8692A">M</text>
+          <text x="40" y="21" font-family="Noto Sans KR" font-weight="800" font-size="15" fill="white">미래티켓</text>
+          <text x="41" y="33" font-family="Noto Sans KR" font-weight="400" font-size="9" fill="#F5A623" letter-spacing="1.5">MIRAETICKET</text>
+        </svg>
+      </div>
       <div class="fl-info">
         상호명: (주)미래티켓<br>
         대표: 김은상 &nbsp;|&nbsp; 연락처: 031-758-2777 / 010-7609-9506<br>
