@@ -318,8 +318,8 @@ async function initAdmin() {
     });
     if (res.ok) {
       var data = await res.json();
-      var content = JSON.parse(atob(data.content.replace(/
-/g, '')));
+      var cleaned = data.content.split('\n').join('');
+      var content = JSON.parse(atob(cleaned));
       savedRates = content.rates || {};
       adj = content.adj || {buy:2, sell:3};
       setStatus('ok', '✅ 최신 시세를 불러왔습니다. <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>');
