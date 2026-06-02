@@ -89,16 +89,16 @@ body{font-family:'Pretendard','Noto Sans KR',sans-serif;color:var(--g800);backgr
 
 /* ━━━━ HEADER ━━━━ */
 header{background:var(--white);border-bottom:1px solid var(--g200);position:sticky;top:0;z-index:100;box-shadow:var(--sh1);}
-.hd{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.hd{max-width:1200px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;position:relative;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--blue2),var(--navy));border-radius:9px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800;}
 .logo-name{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.5px;}
 .logo-name b{color:var(--blue2);}
-nav{display:flex;align-items:center;gap:2px;}
+nav{display:flex;align-items:center;gap:2px;position:absolute;left:50%;transform:translateX(-50%);}
 nav a{color:var(--g600);text-decoration:none;font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:var(--r8);transition:all .18s;white-space:nowrap;}
 nav a:hover{color:var(--blue2);background:var(--blue-l);}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;margin-left:8px;padding:7px 16px!important;}
-.nav-cta:hover{background:var(--gold2)!important;}
+.nav-cta{background:#FEE500!important;color:#191919!important;font-size:15px!important;font-weight:700!important;margin-left:8px;padding:13px 20px!important;border-radius:12px!important;}
+.nav-cta:hover{background:#F5DA00!important;color:#191919!important;transform:translateY(-2px);box-shadow:0 8px 20px rgba(254,229,0,.4)!important;}
 .ham{display:none;background:none;border:none;cursor:pointer;padding:4px;}
 .ham span{display:block;width:21px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;transition:.28s;}
 
@@ -224,7 +224,7 @@ section{padding:72px 28px;}
 .cta h2{font-size:32px;font-weight:800;color:white;letter-spacing:-1px;margin-bottom:11px;position:relative;}
 .cta p{font-size:15px;color:rgba(255,255,255,.62);margin-bottom:30px;position:relative;}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
-.btn-kakao{display:inline-flex;align-items:center;gap:9px;background:#FEE500;color:#191919;font-size:15px;font-weight:700;padding:14px 28px;border-radius:var(--r12);text-decoration:none;border:none;cursor:pointer;transition:all .2s;}
+.btn-kakao{display:inline-flex;align-items:center;gap:8px;background:#FEE500;color:#191919;font-size:15px;font-weight:700;padding:13px 26px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .btn-kakao:hover{background:#F5DA00;transform:translateY(-2px);box-shadow:0 8px 20px rgba(254,229,0,.38);}
 .btn-tel{display:inline-flex;align-items:center;gap:9px;background:transparent;color:white;font-size:15px;font-weight:600;padding:14px 28px;border-radius:var(--r12);text-decoration:none;border:1.5px solid rgba(255,255,255,.28);transition:all .2s;}
 .btn-tel:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.56);}
@@ -289,7 +289,7 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
 .mob-close{align-self:flex-end;background:none;border:none;font-size:21px;cursor:pointer;color:var(--navy);margin-bottom:5px;}
 .mob-panel a{color:var(--g800);text-decoration:none;font-size:15px;font-weight:500;padding:12px 14px;border-radius:var(--r8);border-bottom:1px solid var(--g100);display:block;transition:background .18s;}
 .mob-panel a:hover{background:var(--blue-l);color:var(--blue2);}
-.mob-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;text-align:center;margin-top:6px;border-bottom:none!important;}
+.mob-cta{background:#FEE500!important;color:#191919!important;font-size:15px!important;font-weight:700!important;text-align:center;margin-top:6px;border-bottom:none!important;border-radius:12px!important;padding:13px 20px!important;}
 
 /* ━━━━ RESPONSIVE ━━━━ */
 @media(max-width:960px){
@@ -387,7 +387,7 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
       <a href="#process">매입 절차</a>
       <a href="#faq">자주 묻는 질문</a>
       <a href="#contact">고객센터</a>
-      <a href="https://open.kakao.com/o/sffgSDxi" class="nav-cta" target="_blank">💬 카카오 상담</a>
+      <a href="https://open.kakao.com/o/sffgSDxi" class="nav-cta" target="_blank">💬 카카오톡 상담하기</a>
     </nav>
     <button class="ham" onclick="document.getElementById('mobMenu').classList.add('open')">
       <span></span><span></span><span></span>
@@ -416,7 +416,7 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
       <h1>가장 안전하고<br>빠른 선택,<br><em>미래티켓</em>이<br>함께합니다.</h1>
       <p class="hero-sub">각종 모바일 상품권, 문화상품권<br>최고가 즉시 매입 — 상담 후 5분 이내 입금.</p>
       <div class="hero-btns">
-        <a href="https://open.kakao.com/o/sffgSDxi" class="btn-gold" target="_blank">💬 카카오톡 상담하기</a>
+        <a href="https://open.kakao.com/o/sffgSDxi" class="btn-kakao" target="_blank">💬 카카오톡 상담하기</a>
         <a href="tel:010-7609-9506" class="btn-ghost">📞 전화 연결하기</a>
       </div>
     </div>
@@ -674,11 +674,11 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
 
 <!-- FLOAT -->
 <div class="float">
-  <a href="https://open.kakao.com/o/sffgSDxi" class="fl-btn fkakao" target="_blank">
-    <span>💬</span><span class="fl-lbl">카카오 상담</span>
+  <a href="https://open.kakao.com/o/sffgSDxi" class="fl-btn fkakao" target="_blank" style="width:auto;border-radius:28px;padding:0 18px;font-size:13px;font-weight:700;color:#191919;">
+    카카오톡 상담
   </a>
-  <a href="tel:010-7609-9506" class="fl-btn ftel">
-    <span>📞</span><span class="fl-lbl">전화 상담</span>
+  <a href="tel:010-7609-9506" class="fl-btn ftel" style="width:auto;border-radius:28px;padding:0 18px;font-size:13px;font-weight:700;">
+    <span>010-7609-9506</span>
   </a>
 </div>
 
