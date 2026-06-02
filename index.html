@@ -126,8 +126,8 @@ nav a:hover{color:var(--blue2);background:var(--blue-l);}
 .rb-row{display:flex;align-items:center;justify-content:space-between;padding:9.5px 0;border-bottom:1px solid rgba(255,255,255,.07);}
 .rb-row:last-of-type{border-bottom:none;}
 .rb-left{display:flex;align-items:center;gap:10px;}
-.rb-ico{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-.rb-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.9);}
+.rb-ico{display:none;}
+.rb-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.9);}
 .rb-pct{font-size:18px;font-weight:800;color:var(--gold2);letter-spacing:-.3px;}
 .rb-foot{font-size:11px;color:rgba(255,255,255,.38);line-height:1.85;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
 
@@ -250,7 +250,7 @@ section{padding:72px 28px;}
 .pop-table tr:last-child td{border-bottom:none;}
 .pop-table tr:hover td{background:var(--blue-l);}
 .pop-v{display:flex;align-items:center;gap:9px;}
-.pop-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.pop-ico{display:none;}
 .pop-pct{font-size:15px;font-weight:800;color:var(--blue2);}
 .pop-note{font-size:11px;color:var(--g400);padding:8px 14px 12px;line-height:1.85;border-top:1px solid var(--g100);}
 .pop-foot{display:flex;border-top:1px solid var(--g200);}
@@ -330,14 +330,14 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
     <table class="pop-table">
       <thead><tr><th>상품권 종류</th><th>매입률</th></tr></thead>
       <tbody>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#FFF8E0;">🛍️</span>신세계상품권</div></td><td><span class="pop-pct" data-rate-table="ssg">96%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#FFE8E8;">🎀</span>롯데상품권</div></td><td><span class="pop-pct" data-rate-table="lotte">96.5%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#E8FFF4;">🏬</span>백화점 상품권</div></td><td><span class="pop-pct" data-rate-table="dept">94%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#E8FFF4;">🌏</span>국민관광상품권</div></td><td><span class="pop-pct" data-rate-table="tour">96.5%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#EBF4FF;">🎫</span>문화상품권</div></td><td><span class="pop-pct" data-rate-table="culture">88%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#E8F5E9;">💚</span>농협 기프트카드</div></td><td><span class="pop-pct" data-rate-table="nhgift">95%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#E8F0FF;">🎮</span>구글 기프트카드</div></td><td><span class="pop-pct" data-rate-table="google">91%</span></td></tr>
-        <tr><td><div class="pop-v"><span class="pop-ico" style="background:#F4F4F4;">🎟️</span>기타 상품권</div></td><td><span class="pop-pct" data-rate-table="book">87%</span></td></tr>
+        <tr><td><div class="pop-v">신세계상품권</div></td><td><span class="pop-pct" data-rate-table="ssg">96%</span></td></tr>
+        <tr><td><div class="pop-v">롯데상품권</div></td><td><span class="pop-pct" data-rate-table="lotte">96.5%</span></td></tr>
+        <tr><td><div class="pop-v">백화점 상품권</div></td><td><span class="pop-pct" data-rate-table="dept">94%</span></td></tr>
+        <tr><td><div class="pop-v">국민관광상품권</div></td><td><span class="pop-pct" data-rate-table="tour">96.5%</span></td></tr>
+        <tr><td><div class="pop-v">문화상품권</div></td><td><span class="pop-pct" data-rate-table="culture">88%</span></td></tr>
+        <tr><td><div class="pop-v">농협 기프트카드</div></td><td><span class="pop-pct" data-rate-table="nhgift">95%</span></td></tr>
+        <tr><td><div class="pop-v">구글 기프트카드</div></td><td><span class="pop-pct" data-rate-table="google">91%</span></td></tr>
+        <tr><td><div class="pop-v">기타 상품권</div></td><td><span class="pop-pct" data-rate-table="book">87%</span></td></tr>
       </tbody>
     </table>
     <div class="pop-note">
@@ -425,13 +425,13 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
         <span class="rb-live"><span class="ldot"></span> 실시간 매입률</span>
         <span class="rb-date" id="rateDate"></span>
       </div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-ico" style="background:#FFF8E0;">🛍️</span><span class="rb-name">신세계상품권</span></div><span class="rb-pct" data-rate="ssg">96%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-ico" style="background:#FFE8E8;">🎀</span><span class="rb-name">롯데상품권</span></div><span class="rb-pct" data-rate="lotte">96.5%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-ico" style="background:#E8FFF4;">🏬</span><span class="rb-name">백화점 상품권</span></div><span class="rb-pct" data-rate="dept">94%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-ico" style="background:#E8FFF4;">🌏</span><span class="rb-name">국민관광상품권</span></div><span class="rb-pct" data-rate="tour">96.5%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-ico" style="background:#EBF4FF;">🎫</span><span class="rb-name">문화상품권</span></div><span class="rb-pct" data-rate="culture">88%</span></div>
+      <div class="rb-row"><div class="rb-left"><span class="rb-name">신세계상품권</span></div><span class="rb-pct" data-rate="ssg">96%</span></div>
+      <div class="rb-row"><div class="rb-left"><span class="rb-name">롯데상품권</span></div><span class="rb-pct" data-rate="lotte">96.5%</span></div>
+      <div class="rb-row"><div class="rb-left"><span class="rb-name">백화점 상품권</span></div><span class="rb-pct" data-rate="dept">94%</span></div>
+      <div class="rb-row"><div class="rb-left"><span class="rb-name">국민관광상품권</span></div><span class="rb-pct" data-rate="tour">96.5%</span></div>
+      <div class="rb-row"><div class="rb-left"><span class="rb-name">문화상품권</span></div><span class="rb-pct" data-rate="culture">88%</span></div>
       <div class="rb-foot">
-        ※ 시세는 참고용이며 실제 매입률은 상담 시 안내드립니다.<br>
+        ※ 시세는 실시간 반영 중이지만 오차가 있을 수 있습니다.<br>
         ※ 목록에 없는 상품권도 문의 주시면 최선을 다해 안내해드립니다.
       </div>
     </div>
