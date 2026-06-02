@@ -94,7 +94,7 @@ header{background:var(--white);border-bottom:1px solid var(--g200);position:stic
 .logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--blue2),var(--navy));border-radius:9px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800;}
 .logo-name{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.5px;}
 .logo-name b{color:var(--blue2);}
-nav{display:flex;align-items:center;gap:2px;position:absolute;left:50%;transform:translateX(-50%);}
+nav{display:flex;align-items:center;gap:2px;}
 nav a{color:var(--g600);text-decoration:none;font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:var(--r8);transition:all .18s;white-space:nowrap;}
 nav a:hover{color:var(--blue2);background:var(--blue-l);}
 .nav-cta{background:#FEE500!important;color:#191919!important;font-size:15px!important;font-weight:700!important;margin-left:8px;padding:13px 20px!important;border-radius:12px!important;}
@@ -106,7 +106,7 @@ nav a:hover{color:var(--blue2);background:var(--blue-l);}
 .hero{background:linear-gradient(155deg,#1A2D40 0%,#2C3E50 50%,#1E3A5F 100%);padding:70px 28px 80px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-100px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(21,101,192,.20) 0%,transparent 68%);border-radius:50%;pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:-60px;left:-40px;width:280px;height:280px;background:radial-gradient(circle,rgba(232,150,10,.09) 0%,transparent 68%);border-radius:50%;pointer-events:none;}
-.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;position:relative;z-index:1;}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 480px;gap:40px;align-items:center;position:relative;z-index:1;}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(232,150,10,.14);border:1px solid rgba(232,150,10,.38);color:var(--gold2);font-size:12px;font-weight:700;padding:5px 13px;border-radius:20px;margin-bottom:20px;}
 .hero-badge::before{content:'●';font-size:7px;animation:pulse 2s ease-in-out infinite;}
 .hero h1{font-size:40px;font-weight:800;color:white;line-height:1.26;letter-spacing:-1.5px;margin-bottom:16px;}
@@ -119,26 +119,33 @@ nav a:hover{color:var(--blue2);background:var(--blue-l);}
 .btn-ghost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.56);}
 
 /* Hero Rate Box */
-.rate-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r16);padding:22px 20px 16px;backdrop-filter:blur(14px);}
-.rb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.rb-live{display:inline-flex;align-items:center;gap:6px;background:rgba(232,150,10,.16);border:1px solid rgba(232,150,10,.36);color:var(--gold2);font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;}
-.rb-date{font-size:11px;color:rgba(255,255,255,.35);}
-.rb-row{display:flex;align-items:center;justify-content:space-between;padding:9.5px 0;border-bottom:1px solid rgba(255,255,255,.07);}
-.rb-row:last-of-type{border-bottom:none;}
-.rb-left{display:flex;align-items:center;gap:10px;}
+.rate-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r16);padding:14px;backdrop-filter:blur(14px);}
+.rb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding:0 4px;}
+.rb-live{display:inline-flex;align-items:center;gap:6px;background:rgba(232,150,10,.15);border:1px solid rgba(232,150,10,.3);color:var(--gold2);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.rb-date{font-size:11px;color:rgba(255,255,255,.3);}
+.rb-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rb-row{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;}
+.rb-left{display:flex;flex-direction:column;}
 .rb-ico{display:none;}
-.rb-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.9);}
-.rb-pct{font-size:18px;font-weight:800;color:var(--gold2);letter-spacing:-.3px;}
-.rb-foot{font-size:11px;color:rgba(255,255,255,.38);line-height:1.85;margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);}
+.rb-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:3px;}
+.rb-sub{font-size:10px;color:rgba(255,255,255,.32);}
+.rb-right{text-align:right;}
+.rb-pct{font-size:20px;font-weight:800;color:white;letter-spacing:-.5px;line-height:1;}
+.rb-minibar{display:none;}
+.rb-minifill{height:3px;border-radius:2px;background:rgba(255,255,255,.45);}
+.rb-more{background:rgba(245,166,35,.08)!important;border-color:rgba(245,166,35,.25)!important;cursor:pointer;}
+.rb-more .rb-name{color:#F5A623!important;}
+.rb-more .rb-pct{font-size:22px;}
+.rb-foot{font-size:10.5px;color:rgba(255,255,255,.3);margin-top:10px;padding:8px 4px 0;border-top:1px solid rgba(255,255,255,.07);line-height:1.7;}
 
 /* ━━━━ STAT BAR ━━━━ */
-.stat-bar{background:var(--blue);padding:9px 28px;}
+.stat-bar{background:#2C3E50;padding:9px 28px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);}
 .stat-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .stat-item{display:flex;align-items:center;justify-content:center;gap:10px;padding:7px 14px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.13);border-radius:var(--r8);color:white;transition:background .18s;white-space:nowrap;}
 .stat-item:hover{background:rgba(255,255,255,.18);}
 .s-ico{font-size:16px;flex-shrink:0;}
-.s-num{font-size:15px;font-weight:800;letter-spacing:-.3px;line-height:1;}
-.s-num em{font-size:14px;color:var(--gold2);margin-left:1px;font-style:normal;font-weight:800;}
+.s-num{font-size:15px;font-weight:800;letter-spacing:-.3px;line-height:1;color:white;}
+.s-num em{font-size:14px;color:white;margin-left:1px;font-style:normal;font-weight:800;}
 .s-sep{width:1px;height:14px;background:rgba(255,255,255,.2);flex-shrink:0;}
 .s-lbl{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);}
 
@@ -173,7 +180,7 @@ section{padding:72px 28px;}
 .rc-sub{font-size:11px;color:rgba(255,255,255,.42);margin-top:2px;}
 .rc-bottom{display:flex;align-items:center;justify-content:space-between;}
 .rc-type{font-size:11px;color:rgba(255,255,255,.38);background:rgba(255,255,255,.07);padding:3px 9px;border-radius:20px;}
-.rc-pct{font-size:26px;font-weight:800;color:var(--gold2);letter-spacing:-1px;line-height:1;}
+.rc-pct{font-size:26px;font-weight:800;color:white;letter-spacing:-1px;line-height:1;}
 .rc-pct span{font-size:14px;font-weight:700;margin-left:1px;}
 .rc-hot{display:inline-block;background:rgba(229,57,53,.18);color:#FF6B6B;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;margin-left:5px;vertical-align:middle;}
 .rate-note{margin-top:18px;padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r8);font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.9;}
@@ -241,18 +248,18 @@ section{padding:72px 28px;}
 .pop-head p{font-size:11px;color:rgba(255,255,255,.52);margin-top:3px;}
 .pop-x{position:absolute;top:13px;right:14px;background:rgba(255,255,255,.12);border:none;color:white;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;line-height:26px;text-align:center;transition:background .18s;}
 .pop-x:hover{background:rgba(255,255,255,.24);}
-.pop-table{width:100%;border-collapse:collapse;font-size:13px;}
+.pop-table{width:100%;border-collapse:collapse;font-size:14px;}
 .pop-table thead tr{background:var(--g100);}
-.pop-table th{padding:9px 14px;font-size:11px;font-weight:700;color:var(--g600);text-align:left;}
+.pop-table th{padding:9px 16px;font-size:12px;font-weight:700;color:var(--g600);text-align:left;}
 .pop-table th:last-child{text-align:right;}
-.pop-table td{padding:10px 14px;border-bottom:1px solid var(--g100);vertical-align:middle;}
+.pop-table td{padding:11px 16px;border-bottom:1px solid var(--g100);vertical-align:middle;}
 .pop-table td:last-child{text-align:right;}
 .pop-table tr:last-child td{border-bottom:none;}
 .pop-table tr:hover td{background:var(--blue-l);}
-.pop-v{display:flex;align-items:center;gap:9px;}
+.pop-v{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--g800);}
 .pop-ico{display:none;}
-.pop-pct{font-size:15px;font-weight:800;color:var(--blue2);}
-.pop-note{font-size:11px;color:var(--g400);padding:8px 14px 12px;line-height:1.85;border-top:1px solid var(--g100);}
+.pop-pct{font-size:16px;font-weight:800;color:var(--g800);}
+.pop-note{font-size:12px;color:var(--g600);padding:10px 16px 13px;line-height:1.85;border-top:1px solid var(--g100);}
 .pop-foot{display:flex;border-top:1px solid var(--g200);}
 .pop-btn{flex:1;padding:13px;background:none;border:none;font-size:12px;font-weight:600;cursor:pointer;color:var(--g600);transition:background .18s;}
 .pop-btn:hover{background:var(--g100);}
@@ -425,11 +432,32 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
         <span class="rb-live"><span class="ldot"></span> 실시간 매입률</span>
         <span class="rb-date" id="rateDate"></span>
       </div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-name">신세계상품권</span></div><span class="rb-pct" data-rate="ssg">96%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-name">롯데상품권</span></div><span class="rb-pct" data-rate="lotte">96.5%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-name">백화점 상품권</span></div><span class="rb-pct" data-rate="dept">94%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-name">국민관광상품권</span></div><span class="rb-pct" data-rate="tour">96.5%</span></div>
-      <div class="rb-row"><div class="rb-left"><span class="rb-name">문화상품권</span></div><span class="rb-pct" data-rate="culture">88%</span></div>
+      <div class="rb-grid">
+        <div class="rb-row">
+          <div class="rb-left"><span class="rb-name">신세계상품권</span><span class="rb-sub">실물·모바일</span></div>
+          <div class="rb-right"><div class="rb-pct" data-rate="ssg">96%</div><div class="rb-minibar"><div class="rb-minifill" style="width:96%"></div></div></div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-left"><span class="rb-name">국민관광상품권</span><span class="rb-sub">실물</span></div>
+          <div class="rb-right"><div class="rb-pct" data-rate="tour">96.5%</div><div class="rb-minibar"><div class="rb-minifill" style="width:96.5%"></div></div></div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-left"><span class="rb-name">롯데상품권</span><span class="rb-sub">실물·모바일</span></div>
+          <div class="rb-right"><div class="rb-pct" data-rate="lotte">96.5%</div><div class="rb-minibar"><div class="rb-minifill" style="width:96.5%"></div></div></div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-left"><span class="rb-name">백화점 상품권</span><span class="rb-sub">실물</span></div>
+          <div class="rb-right"><div class="rb-pct" data-rate="dept">94%</div><div class="rb-minibar"><div class="rb-minifill" style="width:94%"></div></div></div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-left"><span class="rb-name">문화상품권</span><span class="rb-sub">모바일 PIN</span></div>
+          <div class="rb-right"><div class="rb-pct" data-rate="culture">88%</div><div class="rb-minibar"><div class="rb-minifill" style="width:88%"></div></div></div>
+        </div>
+        <div class="rb-row rb-more" onclick="window.open('https://open.kakao.com/o/sffgSDxi','_blank')">
+          <div class="rb-left"><span class="rb-name">더 많은 상품권</span><span class="rb-sub">카카오톡 문의</span></div>
+          <div class="rb-right"><div class="rb-pct">→</div></div>
+        </div>
+      </div>
       <div class="rb-foot">
         ※ 시세는 실시간 반영 중이지만 오차가 있을 수 있습니다.<br>
         ※ 목록에 없는 상품권도 문의 주시면 최선을 다해 안내해드립니다.
