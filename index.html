@@ -645,31 +645,7 @@ const d = new Date();
 const ds = d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');
 document.getElementById('rateDate').textContent = ds+' 기준';
 
-// ── GitHub rates.json에서 시세 자동 반영 ──
-const RATE_DEFAULTS = {
-  ssg:88, lotte:87, dept:90, tour:89, culture:87, google:82, nhgift:85, book:85
-};
-async function loadRates(){
-  let rates={}, adj={buy:2,sell:3};
-  try{
-    const res = await fetch(
-      'https://raw.githubusercontent.com/djffjdeofk/miraeticket/main/rates.json?t='+Date.now()
-    );
-    if(res.ok){
-      const data = await res.json();
-      rates = data.rates||{};
-      adj   = data.adj||{buy:2,sell:3};
-    }
-  }catch(e){}
-  Object.keys(RATE_DEFAULTS).forEach(function(key){
-    const woo = rates[key]!==undefined ? rates[key] : RATE_DEFAULTS[key];
-    const buy = Math.round((woo - adj.buy)*10)/10;
-    const txt = buy+'%';
-    document.querySelectorAll('[data-rate="'+key+'"]').forEach(function(el){el.textContent=txt;});
-    document.querySelectorAll('[data-rate-table="'+key+'"]').forEach(function(el){el.textContent=txt;});
-  });
-}
-document.addEventListener('DOMContentLoaded', loadRates);
+// 시세는 HTML에 직접 표시됩니다.
 function closePopup(){document.getElementById('ratePopup').classList.add('hidden');}
 function closePopupToday(){
   const e=new Date();e.setHours(23,59,59,0);
