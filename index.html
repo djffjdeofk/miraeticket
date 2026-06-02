@@ -240,31 +240,30 @@ section{padding:72px 28px;}
 .pop-over{position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fi .28s ease;}
 .pop-over.hidden{display:none;}
 @keyframes fi{from{opacity:0}to{opacity:1}}
-.pop-box{background:var(--white);border-radius:18px;width:100%;max-width:390px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.28);animation:su .28s ease;}
+.pop-box{background:var(--white);border-radius:16px;width:100%;max-width:360px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.28);animation:su .28s ease;}
 @keyframes su{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.pop-head{background:linear-gradient(135deg,var(--navy),#1E3A5F);padding:18px 20px 14px;position:relative;}
-.pop-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;padding:2px 9px;border-radius:20px;margin-bottom:7px;}
-.pop-head h3{font-size:16px;font-weight:800;color:white;letter-spacing:-.3px;}
-.pop-head p{font-size:11px;color:rgba(255,255,255,.52);margin-top:3px;}
-.pop-x{position:absolute;top:13px;right:14px;background:rgba(255,255,255,.12);border:none;color:white;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;line-height:26px;text-align:center;transition:background .18s;}
-.pop-x:hover{background:rgba(255,255,255,.24);}
-.pop-table{width:100%;border-collapse:collapse;font-size:14px;}
-.pop-table thead tr{background:var(--g100);}
-.pop-table th{padding:9px 16px;font-size:12px;font-weight:700;color:var(--g600);text-align:left;}
-.pop-table th:last-child{text-align:right;}
-.pop-table td{padding:11px 16px;border-bottom:1px solid var(--g100);vertical-align:middle;}
-.pop-table td:last-child{text-align:right;}
+.pop-head{background:#E8692A;padding:12px 16px;}
+.pop-head-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.pop-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);color:white;font-size:10px;font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
+.pop-ldot{width:6px;height:6px;background:white;border-radius:50%;display:inline-block;}
+.pop-head-title{font-size:15px;font-weight:800;color:white;letter-spacing:-.3px;flex:1;text-align:center;}.pop-main-title{font-size:22px;font-weight:800;color:white;letter-spacing:-1px;text-align:center;margin-top:10px;}
+.pop-x{background:rgba(255,255,255,.22);border:none;color:white;width:26px;height:26px;border-radius:50%;font-size:13px;cursor:pointer;line-height:26px;text-align:center;flex-shrink:0;transition:background .18s;}
+.pop-x:hover{background:rgba(255,255,255,.38);}
+.pop-table{width:100%;border-collapse:collapse;}
+.pop-table thead tr{background:#FFF6F2;border-bottom:2px solid #E8692A;}
+.pop-table th{padding:9px 18px;font-size:14px;font-weight:700;color:#E8692A;text-align:center;}.pop-table th:first-child{border-right:1px solid #FFE4D6;}
+.pop-table td{padding:11px 18px;border-bottom:1px solid #F1F5F9;text-align:center;font-size:12px;font-weight:600;color:#1E293B;}.pop-table td:first-child{border-right:1px solid #F1F5F9;}
+.pop-table td:last-child{font-weight:800;font-size:12px;}
 .pop-table tr:last-child td{border-bottom:none;}
-.pop-table tr:hover td{background:var(--blue-l);}
-.pop-v{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--g800);}
+.pop-table tr:hover td{background:#FFF6F2;}
+.pop-v{display:flex;align-items:center;justify-content:center;}
 .pop-ico{display:none;}
-.pop-pct{font-size:16px;font-weight:800;color:var(--g800);}
-.pop-note{font-size:12px;color:var(--g600);padding:10px 16px 13px;line-height:1.85;border-top:1px solid var(--g100);}
+.pop-pct{font-size:15px;font-weight:800;color:#1E293B;}
 .pop-foot{display:flex;border-top:1px solid var(--g200);}
-.pop-btn{flex:1;padding:13px;background:none;border:none;font-size:12px;font-weight:600;cursor:pointer;color:var(--g600);transition:background .18s;}
+.pop-btn{flex:1;padding:14px;background:none;border:none;font-size:13px;font-weight:600;cursor:pointer;color:var(--g600);transition:background .18s;}
 .pop-btn:hover{background:var(--g100);}
-.pop-btn.ok{background:var(--blue);color:white;border-radius:0 0 18px 0;font-size:13px;}
-.pop-btn.ok:hover{background:#1255AA;}
+.pop-btn.ok{background:#E8692A;color:white;border-radius:0 0 16px 0;font-size:13px;font-weight:700;}
+.pop-btn.ok:hover{background:#D05520;}
 .pop-divider{width:1px;background:var(--g200);}
 
 /* ━━━━ FOOTER ━━━━ */
@@ -329,10 +328,10 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
 <div class="pop-over" id="ratePopup">
   <div class="pop-box">
     <div class="pop-head">
-      <button class="pop-x" onclick="closePopup()">✕</button>
-      <div class="pop-tag">📊 오늘의 시세</div>
-      <h3>상품권 매입 시세표</h3>
-      <p>실제 매입률은 상담 시 안내드립니다.</p>
+      <div class="pop-head-top">
+        <div class="pop-tag"><span style="width:6px;height:6px;background:white;border-radius:50%;display:inline-block;"></span> 실시간 매입률</div>
+        <button class="pop-x" onclick="closePopup()">✕</button>
+      </div>
     </div>
     <table class="pop-table">
       <thead><tr><th>상품권 종류</th><th>매입률</th></tr></thead>
@@ -347,10 +346,7 @@ footer{background:#1A2535;color:rgba(255,255,255,.46);padding:36px 28px;}
         <tr><td><div class="pop-v">기타 상품권</div></td><td><span class="pop-pct" data-rate-table="book">87%</span></td></tr>
       </tbody>
     </table>
-    <div class="pop-note">
-      ※ 시세는 참고용이며 실제 매입률은 상담 시 안내드립니다.<br>
-      ※ 목록에 없는 상품권도 문의 주시면 최선을 다해 안내해드립니다.
-    </div>
+
     <div class="pop-foot">
       <button class="pop-btn" onclick="closePopupToday()">오늘 하루 열지않기</button>
       <div class="pop-divider"></div>
