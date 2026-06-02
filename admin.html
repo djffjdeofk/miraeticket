@@ -122,15 +122,14 @@ body{font-family:"Noto Sans KR",sans-serif;background:var(--g50);color:var(--g80
   <div class="abody">
     <div class="sbar info" id="sbar">
       💡 우천상품권 시세를 확인한 후 숫자를 수정하고 저장하세요.
-      <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>
     </div>
     <div class="card">
       <div class="card-hd">
         <div>
           <h2>📊 매입 시세 설정</h2>
-          <p>우천 시세 기준으로 자동 계산 (매입: 우천 -<span id="buyDisp">2</span>%)</p>
+          <p>매입 시세를 직접 입력하세요. 저장하면 사이트에 즉시 반영됩니다.</p>
         </div>
-        <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>
+        
       </div>
       <div class="card-bd">
         <div class="rgrid" id="rateGrid"></div>
@@ -141,7 +140,7 @@ body{font-family:"Noto Sans KR",sans-serif;background:var(--g50);color:var(--g80
         <div class="lsaved" id="lastSaved"></div>
       </div>
     </div>
-    <div class="card">
+    <div class="card" style="display:none">
       <div class="card-hd">
         <div>
           <h2>⚙️ 자동 조정 설정</h2>
@@ -186,14 +185,14 @@ var GH_FILE  = 'rates.json';
 var GH_TOKEN = '';
 
 var VOUCHERS = [
-  {key:'ssg',    ico:'🛍️', bg:'#FFF8E0', name:'신세계상품권',    sub:'신세계 이마트 계열',   woo:88},
-  {key:'lotte',  ico:'🎀',  bg:'#FFE8E8', name:'롯데상품권',      sub:'롯데백화점 마트 계열', woo:87},
-  {key:'dept',   ico:'🏬',  bg:'#E8FFF4', name:'백화점 상품권',   sub:'현대 갤러리아 AK 등',  woo:90},
-  {key:'tour',   ico:'🌏',  bg:'#E3F0FF', name:'국민관광상품권',  sub:'한국관광공사 발행',    woo:89},
-  {key:'culture',ico:'🎫',  bg:'#EBF4FF', name:'문화상품권',      sub:'컬쳐랜드 PIN',         woo:87},
-  {key:'google', ico:'🎮',  bg:'#E8F0FF', name:'구글 기프트카드', sub:'Google Play',          woo:82},
-  {key:'nhgift', ico:'💚',  bg:'#E8F5E9', name:'농협 기프트카드', sub:'NH농협은행 발행',      woo:85},
-  {key:'book',   ico:'📚',  bg:'#FFF9E6', name:'도서문화상품권',  sub:'북앤라이프 독서문화',  woo:85}
+  {key:'ssg',    ico:'🛍️', bg:'#FFF8E0', name:'신세계상품권',    sub:'신세계 이마트 계열',   woo:96},
+  {key:'lotte',  ico:'🎀',  bg:'#FFE8E8', name:'롯데상품권',      sub:'롯데백화점 마트 계열', woo:96.5},
+  {key:'dept',   ico:'🏬',  bg:'#E8FFF4', name:'백화점 상품권',   sub:'현대 갤러리아 AK 등',  woo:94},
+  {key:'tour',   ico:'🌏',  bg:'#E3F0FF', name:'국민관광상품권',  sub:'한국관광공사 발행',    woo:96.5},
+  {key:'culture',ico:'🎫',  bg:'#EBF4FF', name:'문화상품권',      sub:'컬쳐랜드 PIN',         woo:88},
+  {key:'google', ico:'🎮',  bg:'#E8F0FF', name:'구글 기프트카드', sub:'Google Play',          woo:91},
+  {key:'nhgift', ico:'💚',  bg:'#E8F5E9', name:'농협 기프트카드', sub:'NH농협은행 발행',      woo:95},
+  {key:'book',   ico:'📚',  bg:'#FFF9E6', name:'도서문화상품권',  sub:'북앤라이프 독서문화',  woo:87}
 ];
 
 function ghApi() {
@@ -231,7 +230,7 @@ function updatePreview(key) {
   if (!inp || !prv) return;
   var woo = parseFloat(inp.value) || 0;
   var buy = Math.round((woo - getBuyAdj()) * 10) / 10;
-  prv.textContent = '매입 ' + buy + '%';
+  prv.style.display = 'none';
 }
 
 function buildGrid(savedRates, adj) {
@@ -269,7 +268,7 @@ function buildGrid(savedRates, adj) {
 
     var lbl = document.createElement('span');
     lbl.className = 'rilbl';
-    lbl.textContent = '우천 시세';
+    lbl.textContent = '매입 시세';
 
     var inp = document.createElement('input');
     inp.className = 'riinp';
@@ -287,7 +286,7 @@ function buildGrid(savedRates, adj) {
     var prv = document.createElement('span');
     prv.className = 'riprev';
     prv.id = 'prev_' + v.key;
-    prv.textContent = '매입 ' + buy + '%';
+    prv.style.display = 'none';
 
     row.appendChild(lbl);
     row.appendChild(inp);
@@ -322,17 +321,17 @@ async function initAdmin() {
       var content = JSON.parse(atob(cleaned));
       savedRates = content.rates || {};
       adj = content.adj || {buy:2, sell:3};
-      setStatus('ok', '✅ 최신 시세를 불러왔습니다. <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>');
+      setStatus('ok', '✅ 최신 시세를 불러왔습니다. ');
     } else if (res.status === 404) {
-      setStatus('info', '💡 저장된 시세가 없습니다. 시세를 입력하고 저장하세요. <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>');
+      setStatus('info', '💡 저장된 시세가 없습니다. 시세를 입력하고 저장하세요. ');
     } else if (res.status === 401) {
       setStatus('err', '❌ 토큰 인증 실패. 올바른 토큰으로 다시 로그인하세요.');
       return;
     } else {
-      setStatus('info', '💡 시세를 입력하고 저장하세요. <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>');
+      setStatus('info', '💡 시세를 입력하고 저장하세요. ');
     }
   } catch(e) {
-    setStatus('info', '💡 시세를 입력하고 저장하세요. <a href="http://www.wooticket.com/price_status.php" target="_blank" class="rlink">🔗 우천 시세 확인</a>');
+    setStatus('info', '💡 시세를 입력하고 저장하세요. ');
   }
   document.getElementById('buyAdj').value = adj.buy;
   document.getElementById('sellAdj').value = adj.sell;
